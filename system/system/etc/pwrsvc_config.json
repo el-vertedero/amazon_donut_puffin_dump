@@ -1,0 +1,97 @@
+{
+    "compatible": "pwrsvc",
+    "version": 1,
+
+    "global": {
+        "autosleep_forbidden": true,
+        "grace_period_ms": 500,
+        "check_treatment_value": true
+    },
+
+    "perflock": {
+        "cpu" : {
+            "powersave": [
+                {
+                    "default": true,
+                    "sysfs": true,
+		    "pairs": [
+			{
+			    "node": "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor",
+			    "value": "interactive"
+			},
+			{
+			    "node": "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq",
+			    "value": "747500"
+			},
+			{
+	                    "node": "/proc/hps/down_threshold",
+                            "value" : "70"
+			}
+		    ]
+                }
+            ],
+            "normal": [
+                {
+                    "sysfs": true,
+		    "pairs": [
+			{
+			    "node": "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor",
+			    "value": "interactive"
+			},
+			{
+			    "node": "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq",
+			    "value": "1599000"
+			},
+			{
+	                    "node": "/proc/hps/down_threshold",
+                            "value" : "70"
+			}
+		    ]
+                }
+            ],
+            "performance": [
+		{
+                    "sysfs": true,
+		    "pairs": [
+			{
+			    "node": "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq",
+			    "value": "1599000"
+			},
+			{
+			    "node": "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor",
+			    "value": "performance"
+			},
+			{
+                            "node": "/proc/hps/down_threshold",
+                            "value" : "20"
+			}
+		    ]
+		}
+	    ]
+        },
+	"network" : {
+            "powersave": [
+                {
+                    "default": true,
+                    "sysfs": false,
+                    "node": "ace_wifi_power_save_on",
+                    "value": "1"
+                }
+            ],
+            "normal": [
+                {
+                    "sysfs": false,
+                    "node": "ace_wifi_power_save_off",
+                    "value": ""
+                }
+            ],
+            "performance": [
+                {
+                    "sysfs": false,
+                    "node": "ace_wifi_power_save_off",
+                    "value": ""
+                }
+            ]
+	}
+    }
+}
