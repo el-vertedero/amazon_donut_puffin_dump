@@ -1,0 +1,24 @@
+# Import mt8516 rc
+import init.mt8516.rc
+
+# Device-specific .rc content follows here
+
+# The Puffin service must be declared at the device-specific level,
+# as it requires device-specific config file parameters for some
+# platforms (e.g. Doebrite).
+service puffin /system/bin/PuffinApp /system/etc/AlexaClientSDKConfig.json /system/etc/OverlayAlexaClientSDKConfig.json
+   class main
+   user puffin
+   group aipc davs dbus inet ace_kvstore ace_group drmrpc system audio keystore cache shell ace_maplite
+   disabled
+
+# perfmonitord
+import init.perfmonitord.rc
+
+# perfhald
+import init.perfhald.rc
+
+# perfrecoveryd
+import init.perfrecoveryd.rc
+
+

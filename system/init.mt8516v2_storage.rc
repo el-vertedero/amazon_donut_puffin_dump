@@ -1,0 +1,5 @@
+# MT8516v2 eMMC specific rc
+
+on post-fs
+    # provide a usable preloader node for OTA system
+    symlink /dev/block/platform/bootdevice/mmcblk0boot0 /dev/block/platform/bootdevice/by-name/preloader
