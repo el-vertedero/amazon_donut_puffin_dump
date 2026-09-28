@@ -1,0 +1,14 @@
+# donut_puffin-user 6.0 NS65741 8138 amz-p,release-keys
+- manufacturer: amazon
+- platform: mt8167
+- codename: donut_puffin
+- flavor: donut_puffin-user
+- release: 7.1.2
+- id: NS65741
+- incremental: 0013222529668
+- tags: amz-p,release-keys
+- fingerprint: Amazon/donut_puffin/donut_puffin:6.0/NS65741/8138N:user/amz-p,release-keys
+- is_ab: true
+- brand: Amazon
+- branch: donut_puffin-user-6.0-NS65741-8138-amz-p,release-keys
+- repo: amazon_donut_puffin_dump
